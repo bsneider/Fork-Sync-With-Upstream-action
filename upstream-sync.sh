@@ -61,10 +61,11 @@ if [ -z "${INPUT_UPSTREAM_REPOSITORY}" ]; then
     exit 1
 else
     if [ "${UPSTREAM_URL}" = "null" ]; then
-    UPSTREAM_REPO= "${UPSTREAM_URL}"
+        UPSTREAM_REPO= "${UPSTREAM_URL}"
     else
-    UPSTREAM_REPO="https://${GITHUB_ACTOR}:${INPUT_GITHUB_TOKEN}@github.com/${INPUT_UPSTREAM_REPOSITORY}.git"
+        UPSTREAM_REPO="https://${GITHUB_ACTOR}:${INPUT_GITHUB_TOKEN}@github.com/${INPUT_UPSTREAM_REPOSITORY}.git"
     fi
+    echo "UPSTREAM_REPO = ${UPSTREAM_URL}"
 fi
 
 # set user credentials in git config
@@ -80,7 +81,8 @@ fi
 git remote add upstream "${UPSTREAM_REPO}"
 
 # check remotes in case of error
-# git remote -v
+echo 'view remotes for debugging'
+git remote -v
 
 # check latest commit hashes for a match, exit if nothing to sync
 git fetch ${INPUT_GIT_FETCH_ARGS} upstream "${INPUT_UPSTREAM_BRANCH}"

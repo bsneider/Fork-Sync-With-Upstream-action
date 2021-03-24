@@ -1,5 +1,5 @@
-name: 'Fork Sync With Upstream'
-author: 'Adam Ormsby (@aormsby)'
+name: 'Fork Sync With Upstream Stash/Bitbucket'
+author: 'Brandon (@bsneider)'
 description: 'Automatically updates fork with new commits from upstream repo, safest to run on an unmodified branch'
 
 branding:
@@ -14,7 +14,7 @@ inputs:
   upstream_url:
     description: 'Input full url, for example if upstream is not in github, but rather in Stash/BitBucket'
     required: false
-    
+
   upstream_repository:
     description: 'Upstream repository, e.g. => aormsby/Fork-Sync-With-Upstream-action'
     required: true
