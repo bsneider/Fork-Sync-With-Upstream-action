@@ -61,11 +61,11 @@ if [ -z "${INPUT_UPSTREAM_REPOSITORY}" ]; then
     exit 1
 else
     if [ "${UPSTREAM_URL}" = "null" ]; then
-        UPSTREAM_REPO= "${UPSTREAM_URL}"
-    else
         UPSTREAM_REPO="https://${GITHUB_ACTOR}:${INPUT_GITHUB_TOKEN}@github.com/${INPUT_UPSTREAM_REPOSITORY}.git"
+    else
+        UPSTREAM_REPO= "${UPSTREAM_URL}"
     fi
-    echo "UPSTREAM_REPO = ${UPSTREAM_URL}"
+    echo "UPSTREAM_REPO = ${UPSTREAM_REPO}"
 fi
 
 # set user credentials in git config
