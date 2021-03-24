@@ -11,6 +11,10 @@ inputs:
     description: 'Token for accessing the remote repo with authentication'
     required: false
 
+  upstream_url:
+    description: 'Input full url, for example if upstream is not in github, but rather in Stash/BitBucket'
+    required: false
+    
   upstream_repository:
     description: 'Upstream repository, e.g. => aormsby/Fork-Sync-With-Upstream-action'
     required: true
